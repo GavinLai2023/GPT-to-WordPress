@@ -19,6 +19,7 @@ credit_text = config.get('openai', 'credit_text')
 wp_username = config.get('wordpress', 'username')
 wp_password = config.get('wordpress', 'password')
 wp_post_status = config.get('wordpress', 'post_status')
+wp_web_address = config.get('wordpress', 'site')
 
 
 
@@ -134,7 +135,7 @@ def prepare_post_data(ai_response,author,category,tag,WordPress):
     
 
 def main(input_file_name,system_message_file):
-    wp = WordPress(wp_username, wp_password, "https://www.skillmaker.edu.au/wp-json/wp/v2")
+    wp = WordPress(wp_username, wp_password, wp_web_address)
 
     rows = process_input_csv_file(input_file_name) #read each row of the csv file
    
