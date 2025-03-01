@@ -25,7 +25,7 @@ wp_web_address = config.get('wordpress', 'site')
 
 def get_ai_response(prompt, system_message) :
     #print(f"Getting AI response for...{prompt}")
-    messages = [{"role": "system", "content": system_message}, {"role": "user", "content": prompt}]
+    messages = [{"role": "developer", "content": system_message}, {"role": "user", "content": prompt}]
     # result = openai.chat.completions.create(model=model, messages=messages, temperature=0.5, max_tokens=1500) 
     result = openai.chat.completions.create(model=model_name, messages=messages) 
     print(f"AI response received for...{prompt}")
